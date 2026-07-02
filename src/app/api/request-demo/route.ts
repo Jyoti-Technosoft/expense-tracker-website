@@ -59,50 +59,137 @@ export async function POST(req: Request) {
             subject: "🚀 New Demo Request Received",
             attachments,
             html: `
-    <div style="font-family: Arial, sans-serif; max-width: 650px; margin: auto; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden;">
-        <!-- Header -->
-        <div style="background: linear-gradient(135deg,#4F46E5,#4338CA); color: white; padding: 24px; text-align:center;">
-          ${logoImg}
-          <h1 style="margin: 0; font-size: 22px;">New Demo Request 🚀</h1>
-          <p style="margin: 6px 0 0; font-size: 14px; opacity: 0.9;">
-            A new potential customer has requested a product demo.
-          </p>
-        </div>
+<div style="margin:0;padding:40px 20px;background:#EEF2FF;font-family:Arial,Helvetica,sans-serif;">
 
-        <div style="padding: 24px;">
+  <div style="max-width:650px;margin:0 auto;background:#ffffff;border-radius:18px;overflow:hidden;border:1px solid #E5E7EB;box-shadow:0 15px 40px rgba(0,0,0,.08);">
 
-            <h2 style="margin-top: 0; color: #111827;">Lead Details</h2>
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#4F46E5,#4338CA);padding:40px 25px;text-align:center;">
 
-            <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
-                <tr><td><strong>Name:</strong></td><td>${fullName}</td></tr>
-                <tr><td><strong>Email:</strong></td><td>${workEmail}</td></tr>
-                <tr><td><strong>Company:</strong></td><td>${company}</td></tr>
-                <tr><td><strong>Team Size:</strong></td><td>${teamSize}</td></tr>
-                <tr><td><strong>Phone:</strong></td><td>${phone || "Not provided"}</td></tr>
-                <tr><td><strong>Preferred Date:</strong></td><td>${preferredDate}</td></tr>
-            </table>
+      <div style="width:90px;height:90px;background:#ffffff;border-radius:20px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,.15);">
+        ${logoImg}
+      </div>
 
-            <div style="margin-top: 24px;">
-                <h3 style="margin-bottom: 8px;">Customer Message</h3>
-                <div style="background: #f9fafb; padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
-                    ${safeMessage || "No message provided"}
-                </div>
-            </div>
+      <h1 style="margin:0;color:#ffffff;font-size:28px;font-weight:700;">
+        🚀 New Demo Request
+      </h1>
 
-            <div style="margin-top: 24px; padding: 16px; background: #eff2ff; border-left: 4px solid #4f46e5; border-radius: 6px;">
-                <p style="margin: 0; font-size: 13px;">
-                    💡 <strong>Action Tip:</strong> Reach out within 24 hours to maximize conversion chances.
-                </p>
-            </div>
-
-        </div>
-
-        <div style="background: #f3f4f6; padding: 14px; text-align: center; font-size: 12px; color: #6b7280;">
-            ${brandConfig.company.name} • Lead Notification System
-        </div>
+      <p style="margin:12px 0 0;color:#E0E7FF;font-size:15px;line-height:1.6;">
+        A new potential customer has requested a product demo.
+      </p>
 
     </div>
-    `,
+
+    <!-- Body -->
+    <div style="padding:35px;">
+
+      <h2 style="margin:0 0 20px;color:#111827;font-size:20px;">
+        Lead Information
+      </h2>
+
+      <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;overflow:hidden;">
+
+        <tr>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;width:180px;font-weight:600;color:#4F46E5;">
+            Full Name
+          </td>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;color:#374151;">
+            ${fullName}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;font-weight:600;color:#4F46E5;">
+            Work Email
+          </td>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;color:#374151;">
+            ${workEmail}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;font-weight:600;color:#4F46E5;">
+            Company
+          </td>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;color:#374151;">
+            ${company}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;font-weight:600;color:#4F46E5;">
+            Team Size
+          </td>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;color:#374151;">
+            ${teamSize}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;font-weight:600;color:#4F46E5;">
+            Phone Number
+          </td>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;color:#374151;">
+            ${phone || "Not provided"}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:16px;font-weight:600;color:#4F46E5;">
+            Preferred Demo Date
+          </td>
+          <td style="padding:16px;color:#374151;">
+            ${preferredDate}
+          </td>
+        </tr>
+
+      </table>
+
+      <h2 style="margin:35px 0 15px;color:#111827;font-size:20px;">
+        Customer Message
+      </h2>
+
+      <div style="background:#FAFBFF;border:1px solid #DBEAFE;border-left:5px solid #4F46E5;border-radius:12px;padding:20px;color:#374151;white-space:pre-line;line-height:1.8;font-size:15px;">
+        ${safeMessage || "No message provided."}
+      </div>
+
+      <div style="margin-top:30px;padding:18px;background:#EEF2FF;border:1px solid #C7D2FE;border-radius:12px;">
+
+        <div style="font-size:16px;font-weight:600;color:#4338CA;">
+          💡 Follow-up Recommendation
+        </div>
+
+        <p style="margin:10px 0 0;color:#374151;line-height:1.6;">
+          Contact this lead within
+          <strong>24 hours</strong>
+          to maximize engagement and conversion opportunities.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div style="background:#F9FAFB;padding:25px;text-align:center;border-top:1px solid #E5E7EB;">
+
+      <p style="margin:0;font-size:14px;font-weight:600;color:#111827;">
+        ${brandConfig.company.name}
+      </p>
+
+      <p style="margin:8px 0 0;font-size:12px;color:#6B7280;">
+        Demo Request Notification System
+      </p>
+
+      <p style="margin:6px 0 0;font-size:12px;color:#9CA3AF;">
+        This email was automatically generated from your website's demo request form.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+`
         });
 
         await transporter.sendMail({
@@ -111,72 +198,138 @@ export async function POST(req: Request) {
             subject: `🎉 Your Demo Request is Confirmed - ${brandConfig.product.name}`,
             attachments,
             html: `
-    <div style="font-family: Arial, sans-serif; max-width: 650px; margin: auto; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden;">
+<div style="margin:0;padding:40px 20px;background:#EEF2FF;font-family:Arial,Helvetica,sans-serif;">
 
-        <!-- Header -->
-        <div style="background: linear-gradient(135deg,#4F46E5,#4338CA); color: white; text-align: center; padding: 32px;">
-            ${logoImg}
-            <h1 style="margin: 0;">We’ve Received Your Request 🎉</h1>
-            <p style="margin: 8px 0 0; font-size: 14px; opacity: 0.9;">
-                Thanks for showing interest in ${brandConfig.product.name}
-            </p>
-        </div>
+  <div style="max-width:650px;margin:0 auto;background:#ffffff;border-radius:18px;overflow:hidden;border:1px solid #E5E7EB;box-shadow:0 15px 40px rgba(0,0,0,.08);">
 
-        <!-- Body -->
-        <div style="padding: 28px;">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#4F46E5,#4338CA);padding:45px 25px;text-align:center;">
 
-            <p style="font-size: 15px;">Hi <strong>${fullName}</strong>,</p>
+      <div style="width:90px;height:90px;background:#ffffff;border-radius:20px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,.15);">
+        ${logoImg}
+      </div>
 
-            <p style="font-size: 15px; line-height: 1.6;">
-                Thank you for requesting a personalized demo of <strong>${brandConfig.product.name}</strong>.
-                We’re excited to show you how it can help your team improve productivity, streamline workflows, and achieve better results.
-            </p>
+      <h1 style="margin:0;color:#ffffff;font-size:28px;font-weight:700;">
+        🎉 Demo Request Confirmed
+      </h1>
 
-            <!-- Expectation Box -->
-            <div style="margin: 20px 0; padding: 16px; background: #eef2ff; border-left: 4px solid #4f46e5; border-radius: 8px;">
-                <p style="margin: 0; font-size: 14px;">
-                    ⏱ <strong>What happens next?</strong><br/>
-                    Our team will review your request and reach out within <strong>24 hours</strong> to schedule your demo at a convenient time.
-                </p>
-            </div>
-
-            <!-- Summary -->
-            <h3 style="margin-bottom: 10px;">Your Request Summary</h3>
-            <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px;">
-                <p style="margin: 6px 0;"><strong>Company:</strong> ${company}</p>
-                <p style="margin: 6px 0;"><strong>Team Size:</strong> ${teamSize}</p>
-                <p style="margin: 6px 0;"><strong>Preferred Date:</strong> ${preferredDate}</p>
-            </div>
-
-            <!-- CTA Section -->
-            <div style="margin-top: 24px; text-align: center;">
-                <p style="font-size: 14px; margin-bottom: 12px;">
-                    Need faster assistance or have questions?
-                </p>
-                <a href="mailto:${process.env.EMAIL_USER}" 
-                   style="display: inline-block; padding: 12px 20px; background: #4f46e5; color: white; text-decoration: none; border-radius: 6px; font-size: 14px;">
-                    Contact our Team
-                </a>
-            </div>
-
-            <p style="margin-top: 28px; font-size: 14px; line-height: 1.6;">
-                We look forward to speaking with you soon and helping your team get started with ${brandConfig.product.name}.
-            </p>
-
-            <p style="font-size: 14px;">
-                Best regards,<br/>
-                <strong>${brandConfig.company.name} Team</strong>
-            </p>
-
-        </div>
-
-        <!-- Footer -->
-        <div style="background: #f3f4f6; padding: 16px; text-align: center; font-size: 12px; color: #6b7280;">
-            © ${new Date().getFullYear()} ${brandConfig.company.name}. All rights reserved.
-        </div>
+      <p style="margin:12px 0 0;color:#E0E7FF;font-size:15px;line-height:1.6;">
+        Thank you for your interest in
+        <strong>${brandConfig.product.name}</strong>.
+      </p>
 
     </div>
-    `,
+
+    <!-- Body -->
+    <div style="padding:35px;">
+
+      <p style="margin-top:0;font-size:16px;color:#111827;">
+        Hi <strong>${fullName}</strong>,
+      </p>
+
+      <p style="color:#4B5563;line-height:1.8;font-size:15px;">
+        We've successfully received your demo request for
+        <strong>${brandConfig.product.name}</strong>.
+        Our team is excited to show you how our platform can help streamline your workflow and improve your team's productivity.
+      </p>
+
+      <!-- Response Card -->
+      <div style="margin:30px 0;padding:18px;background:#EEF2FF;border:1px solid #C7D2FE;border-radius:12px;">
+
+        <div style="font-size:16px;font-weight:600;color:#4338CA;">
+          ⏱️ What Happens Next?
+        </div>
+
+        <p style="margin:10px 0 0;color:#374151;line-height:1.6;">
+          Our specialists will review your request and contact you within
+          <strong>24 business hours</strong>
+          to arrange a demo at a time that works best for you.
+        </p>
+
+      </div>
+
+      <!-- Summary -->
+      <h2 style="margin:35px 0 15px;color:#111827;font-size:20px;">
+        Your Demo Request
+      </h2>
+
+      <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;overflow:hidden;">
+
+        <tr>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;width:180px;font-weight:600;color:#4F46E5;">
+            Company
+          </td>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;color:#374151;">
+            ${company}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;font-weight:600;color:#4F46E5;">
+            Team Size
+          </td>
+          <td style="padding:16px;border-bottom:1px solid #E5E7EB;color:#374151;">
+            ${teamSize}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:16px;font-weight:600;color:#4F46E5;">
+            Preferred Demo Date
+          </td>
+          <td style="padding:16px;color:#374151;">
+            ${preferredDate}
+          </td>
+        </tr>
+
+      </table>
+
+      <!-- Contact -->
+      <div style="margin-top:30px;padding:20px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;">
+
+        <p style="margin:0;color:#374151;line-height:1.7;">
+          Have additional questions or need to update your request?
+          Simply reply to this email and our team will be happy to assist you.
+        </p>
+
+      </div>
+
+      <!-- Closing -->
+      <p style="margin-top:35px;color:#4B5563;line-height:1.8;font-size:15px;">
+        Thank you again for choosing
+        <strong>${brandConfig.company.name}</strong>.
+        We look forward to meeting with you and helping your team get the most from
+        <strong>${brandConfig.product.name}</strong>.
+      </p>
+
+      <p style="margin-top:30px;color:#111827;line-height:1.8;">
+        Best regards,<br>
+        <strong>${brandConfig.company.name} Team</strong>
+      </p>
+
+    </div>
+
+    <!-- Footer -->
+    <div style="background:#F9FAFB;padding:25px;text-align:center;border-top:1px solid #E5E7EB;">
+
+      <p style="margin:0;font-size:14px;font-weight:600;color:#111827;">
+        ${brandConfig.company.name}
+      </p>
+
+      <p style="margin:8px 0 0;font-size:12px;color:#6B7280;">
+        Thank you for requesting a demo of ${brandConfig.product.name}.
+      </p>
+
+      <p style="margin:6px 0 0;font-size:12px;color:#9CA3AF;">
+        © ${new Date().getFullYear()} ${brandConfig.company.name}. All rights reserved.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+`
         });
 
         return NextResponse.json({
