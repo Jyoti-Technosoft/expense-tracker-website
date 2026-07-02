@@ -24,6 +24,14 @@ The Project is designed to be easily customized for different clients by updatin
 - React Hook Form
 - Zod Validation
 
+## Project Structure 
+- /app -> App Router pages
+- /components -> Reusable UI components
+- /lib -> Utilities & helpers
+- /config -> White-label configuration
+- /public -> Static assets(logos , images)
+- /styles -> Global styles
+
 # Getting Started
 
 Clone the repository.
