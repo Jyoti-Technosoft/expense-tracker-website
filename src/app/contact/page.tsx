@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import {MessageCircle , Mail , Phone , MapPin , Send , CheckCircle2 , User , MessageSquare , Building2 , FileText} from "lucide-react";
+import { MessageCircle, Mail, Phone, MapPin, Send, CheckCircle2, User, MessageSquare, Building2, FileText } from "lucide-react";
 import { brandConfig } from "@/config/brand";
 import Reveal from "@/components/Reveal";
 
@@ -69,6 +69,10 @@ export default function ContactPage() {
         },
         body: JSON.stringify(formData),
       });
+
+      const data = await res.json().catch(() => null);
+
+      console.log("API response:", res.status, data);
 
       if (res.ok) {
         setSubmitted(true);
