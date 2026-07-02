@@ -25,12 +25,12 @@ The Project is designed to be easily customized for different clients by updatin
 - Zod Validation
 
 ## Project Structure 
-/app -> App Router pages
-/components -> Reusable UI components
-/lib -> Utilities & helpers
-/config -> White-label configuration
-/public -> Static assets(logos , images)
-/styles -> Global styles
+- /app -> App Router pages
+- /components -> Reusable UI components
+- /lib -> Utilities & helpers
+- /config -> White-label configuration
+- /public -> Static assets(logos , images)
+- /styles -> Global styles
 
 # Getting Started
 
