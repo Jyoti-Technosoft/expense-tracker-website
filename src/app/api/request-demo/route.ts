@@ -149,7 +149,7 @@ export async function POST(req: Request) {
         Customer Message
       </h2>
 
-      <div style="background:#FAFBFF;border:1px solid #DBEAFE;border-left:5px solid #4F46E5;border-radius:12px;padding:20px;color:#374151;white-space:pre-line;line-height:1.8;font-size:15px;">
+      <div style="background:#FAFBFF;border:1px solid #DBEAFE;border-left:5px solid #4F46E5;border-radius:12px;padding:8px 20px 20px 20px;color:#374151;white-space:pre-line;line-height:1.8;font-size:15px;">
         ${safeMessage || "No message provided."}
       </div>
 
