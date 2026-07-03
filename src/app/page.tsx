@@ -14,6 +14,7 @@ import {
 import { brandConfig } from "../config/brand";
 import Reveal from "@/components/Reveal";
 import CountUp from "react-countup";
+import DashboardPreview from "@/components/DashboardPreview";
 
 export default function Home() {
     const { hero, features } = brandConfig;
@@ -129,6 +130,18 @@ export default function Home() {
                         })}
                     </div>
                 </div>
+
+                <section className="relative py-20">
+
+                    {/* CENTER CONTAINER */}
+                    <div className="relative max-w-7xl mx-auto px-6 flex justify-center">
+
+                        <div className="w-full max-w-5xl">
+                            <DashboardPreview />
+                        </div>
+
+                    </div>
+                </section>
             </section>
 
             {/* Features */}
