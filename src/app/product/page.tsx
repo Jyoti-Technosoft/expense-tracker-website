@@ -3,6 +3,10 @@ import {ArrowRight , CheckCircle , Clock , Shield , Plug , Receipt , Workflow , 
 
 import { brandConfig } from "@/config/brand";
 import Reveal from "@/components/Reveal";
+import BudgetVsActual from "@/components/BudgetVsActual";
+import MonthlySpendingChart from "@/components/MonthlySpending";
+import CategorizeSpending from "@/components/CategorizedSpend";
+import SpendingCategoriesRadar from "@/components/ui/RadarChart";
 
 export default function ProductPage() {
   const {
@@ -93,8 +97,6 @@ export default function ProductPage() {
         py-14 sm:py-16 lg:py-20
         overflow-hidden
       ">
-
-              
 
               {/* Content */}
               <div className="relative space-y-6">
@@ -228,6 +230,11 @@ export default function ProductPage() {
         </div>
       </section>
 
+      <BudgetVsActual />
+      <MonthlySpendingChart />
+      <CategorizeSpending />
+      <SpendingCategoriesRadar />
+      
       {/* Benefits */}
       <section className="relative py-28 overflow-hidden bg-gray-50">
 
